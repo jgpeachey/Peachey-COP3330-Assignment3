@@ -7,7 +7,7 @@
 'https://plantuml.com/class-diagram
 
 
-App o-- NameStorage
+ProductCentral o-- Product
 App o-- ProductCentral
 
 
@@ -22,11 +22,12 @@ class ProductCentral{
     productInfo()
 }
 
-class NameStorage {
-    list of map of names
+class Product {
+    String name
+    double price
+    int quantity
 
-    arrayMaker()
-    listSorter()
+    product()
 }
 
 @enduml

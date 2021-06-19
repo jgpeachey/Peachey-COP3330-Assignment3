@@ -3,7 +3,7 @@
  *  Copyright 2021 John Peachey
  */
 
-package ex41.base;
+package ex42.base;
 
 /*
 Create a program that reads in the following list of names from a file called `exercise42_input.txt` and sorts the list alphabetically:
@@ -34,25 +34,16 @@ Implement this program by reading in the names from the user, one at a time, and
 Use the program to sort data from a large data set (e.g. census data) and use a profiler to analyze its performance.
  */
 
+import ex41.base.NameStorage;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class App {
 
     public static void main(String[] args) {
-        //uses methods to read and create a sorted list of names
-        //used as a central location
-        //create class instances
-        NameStorage list = new NameStorage();
-        FileCentral editor = new FileCentral();
+        FileCentral file = new FileCentral();
 
-        //create variables needed
-        Map<Integer, String> input = new HashMap<Integer, String>();
-
-        //input setup
-        input = editor.inputFileGetter();
-
-        //output setup
-        editor.outputFileCreator(list.listCreator(input));
+        file.filePrinter(file.fileInput());
     }
 }

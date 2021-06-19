@@ -18,7 +18,7 @@ public class FileCentral {
         //try method to make sure file is found
         try {
             //takes in file info
-            File theNames = new File("src/main/java/ex41/base/exercise41_input.txt");
+            File theNames = new File("src/main/java/ex41/base/exercise42_input.txt");
             Scanner in = new Scanner(theNames);
             // reads next input from file
             while (in.hasNextLine()) {
