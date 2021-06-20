@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class FileCentralTest {
 
     @Test
-    void fileInput() {
+    void fileInput_assigns_correct_info_to_correct_location() {
         //given
         FileCentral a = new FileCentral();
         Map<Integer, String> actual = new HashMap<Integer, String>();
@@ -50,7 +50,7 @@ class FileCentralTest {
     }
 
     @Test
-    void filePrinter() {
+    void filePrinter_returns_the_proper_string() {
         //given
         FileCentral a = new FileCentral();
         Map<Integer, String> input = new HashMap<Integer, String>();
