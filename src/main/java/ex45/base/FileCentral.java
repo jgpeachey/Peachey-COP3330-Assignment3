@@ -21,8 +21,8 @@ public class FileCentral {
             File theNames = new File("src/main/java/ex45/base/exercise45_input.txt");
             Scanner in = new Scanner(theNames);
             // reads next input from file
-            while (in.hasNextLine()) {
-                fileInput.put(count, in.nextLine());
+            while (in.hasNext()) {
+                fileInput.put(count, in.next());
                 ++count;
             }
         }
@@ -60,21 +60,23 @@ public class FileCentral {
     }
 
     // used to swap words in file
-    public Map wordSwapper(Map<Integer, String> input){
-        Map<Integer, String> swapped = new HashMap<Integer, String>();
-        String toSwap = "utilize";
-        String updated = "use";
+    public Map wordSwapper(Map<Integer, String> input, String toSwap, String updated ){
         // loops through map to find words to swap
         for (int i = 0; i < input.size(); i++) {
             // determine if word is the toSwap
-            if (input.get(i).contains(toSwap)){
-                swapped.put(i, updated);
+            //if plural
+            if (input.get(i).contains(toSwap+"s")){
+                input.replace(i, updated+"s");
             }
-            else{
-                System.out.println(input.get(i));
-                swapped.put(i, input.get(i));
+            // if quoted
+            else if (input.get(i).contains("\""+toSwap+"\"")){
+                input.replace(i, "\""+updated+"\"");
+            }
+            //if regular
+            else if (input.get(i).contains(toSwap)){
+                input.replace(i, updated);
             }
         }
-        return swapped;
+        return input;
     }
 }

@@ -50,7 +50,7 @@ public class App {
         String name = userInput();
 
         //output setup
-        editor.outputMaker(editor.wordSwapper(input), name);
+        editor.outputMaker(editor.wordSwapper(input, "utilize", "use"), name);
     }
 
     public static String userInput(){
