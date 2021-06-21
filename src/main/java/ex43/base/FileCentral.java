@@ -36,7 +36,7 @@ public class FileCentral {
         File file = fileMaker(directory, name);
         //make directory
         file.mkdirs();
-        directory += name;
+        directory += name+"/";
 
         return directory;
     }
